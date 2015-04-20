@@ -1,0 +1,28 @@
+Hospital_Name:
+  name: string
+  private_public_hospital: string
+  year_founded: string
+  doctors: integer
+
+Doctors:
+  name: string
+  dob: string
+  education: string
+  years_of_experience: string
+  specialty: string
+
+Type_of_Doctor:
+  specialty: string
+  doctor: integer
+
+User:
+  name: string
+  email: string
+  date_joined: string
+  password: string
+
+Reviews:
+  user: string
+  treatment_quality: integer
+  recommendation: string
+  review_comments: text
