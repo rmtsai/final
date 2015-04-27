@@ -1,0 +1,8 @@
+<% doctor = Doctors.find_by(id: params["id"])%>
+
+	<h1> <%=doctor.name%></h1>
+
+	<p>	<%=doctor.dob%></p>
+	<p>	<%=doctor.education%></p>
+	<p>	<%=doctor.years_of_experience%></p>
+	<p>	<%=doctor.specialty%></p>

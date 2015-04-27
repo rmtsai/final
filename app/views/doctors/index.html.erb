@@ -1,0 +1,7 @@
+<h3>Welcome to the Touch Point Doctors Group!</h3>
+
+<% doctors = Doctors.all%>
+<% doctors.each do |doctor|%>
+	<p><a href="/doctors/<%=doctor.id%>"><%=doctor.name%></a></p>
+
+<% end %>
