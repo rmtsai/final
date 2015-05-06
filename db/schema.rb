@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text    "review_comments"
   end
 
-  create_table "type_of_doctors", force: true do |t|
+  create_table "typeof_doctors", force: true do |t|
     t.string  "specialty"
     t.integer "doctor"
   end

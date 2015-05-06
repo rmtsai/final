@@ -1,2 +1,2 @@
-class Hospital_Name < ActiveRecord::Base
+class HospitalName < ActiveRecord::Base
 end
