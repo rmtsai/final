@@ -1,7 +1,14 @@
 <h3>Welcome to the Touch Point Doctors Group!</h3>
 
-<% doctors = Doctors.all%>
-<% doctors.each do |doctor|%>
-	<p><a href="/doctors/<%=doctor.id%>"><%=doctor.name%></a></p>
+<% doctor = Doctors.all%>
+<% doctor.each do |doctor|%>
+	<p>
+	<%= link_to doctor.name, doctor_url(doctor)%>
+
+<%= link_to "Edit", edit_doctor_url(doctor)%> 
+<%= link_to "Delete", doctor_url(doctor), method: :delete%>
+</p>
 
 <% end %>
+
+<%= link_to "New Doctor", new_doctor_path, class: 'btn btn-sm btn-success' %>

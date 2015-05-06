@@ -1,0 +1,31 @@
+<%= form_for @doctor do |form| %>
+  <div class="form-group">
+    <p>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.label :dob %>
+      <%= form.text_field :dob, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :education %>
+      <%= form.text_field :education, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :years_of_experience %>
+      <%= form.text_field :years_of_experience, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :specialty %>
+      <%= form.text_field :specialty, class: "form-control" %>
+    </p>
+  </div>
+  
+  <p><%= form.button 'Create Doctor', class: "btn btn-success" %></p>
+  
+<% end %>
+
