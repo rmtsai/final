@@ -1,4 +1,4 @@
-Hospital_Name:
+HospitalName:
   name: string
   private_public_hospital: string
   year_founded: string
@@ -11,7 +11,7 @@ Doctor:
   years_of_experience: string
   specialty: string
 
-Type_of_Doctor:
+TypeofDoctor:
   specialty: string
   doctor: integer
 
