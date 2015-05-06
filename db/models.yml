@@ -10,10 +10,10 @@ Doctor:
   education: string
   years_of_experience: string
   specialty: string
+  typeofdoctor_id: integer
 
 TypeofDoctor:
   specialty: string
-  doctor: integer
 
 User:
   name: string
@@ -26,3 +26,7 @@ Review:
   treatment_quality: integer
   recommendation: string
   review_comments: text
+
+Affiliation:
+  hospital_id: integer
+  doctor_id: integer
