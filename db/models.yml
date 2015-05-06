@@ -1,4 +1,4 @@
-HospitalName:
+Hospital:
   name: string
   private_public_hospital: string
   year_founded: string

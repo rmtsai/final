@@ -1,6 +1,6 @@
 # Deletes everything from the database so that you start fresh
 puts "Deleting all records from the database..."
-HospitalName.delete_all
+Hospital.delete_all
 Doctor.delete_all
 TypeofDoctor.delete_all
 User.delete_all
@@ -8,11 +8,11 @@ Reviews.delete_all
 
 # Create the hospital names
 puts "Creating hospital names..."
-northwesternmemorial = HospitalName.create(name: "Northwestern Memorial", private_public_hospital: "private", year_founded: "1907", doctors: "1")
-universityofchicago = HospitalName.create(name: "University of Chicago", private_public_hospital: "private", year_founded: "1926", doctors: "2")
-shriners = HospitalName.create(name: "Shriners", private_public_hospital: "private", year_founded: "1955", doctors: "3")
-jhu = HospitalName.create(name: "Johns Hopkins University", private_public_hospital: "private", year_founded: "2006", doctors: "4")
-queens = HospitalName.create(name: "Queens Medical Center", private_public_hospital: "private", year_founded: "1975", doctors: "5")
+northwesternmemorial = Hospital.create(name: "Northwestern Memorial", private_public_hospital: "private", year_founded: "1907", doctors: "1")
+universityofchicago = Hospital.create(name: "University of Chicago", private_public_hospital: "private", year_founded: "1926", doctors: "2")
+shriners = Hospital.create(name: "Shriners", private_public_hospital: "private", year_founded: "1955", doctors: "3")
+jhu = Hospital.create(name: "Johns Hopkins University", private_public_hospital: "private", year_founded: "2006", doctors: "4")
+queens = Hospital.create(name: "Queens Medical Center", private_public_hospital: "private", year_founded: "1975", doctors: "5")
 
 # Create the type of doctor
 puts "Creating type of doctor..."

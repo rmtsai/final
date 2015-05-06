@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "specialty"
   end
 
-  create_table "hospital_names", force: true do |t|
+  create_table "hospitals", force: true do |t|
     t.string  "name"
     t.string  "private_public_hospital"
     t.string  "year_founded"
