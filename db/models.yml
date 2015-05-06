@@ -4,7 +4,7 @@ Hospital_Name:
   year_founded: string
   doctors: integer
 
-Doctors:
+Doctor:
   name: string
   dob: string
   education: string
@@ -21,7 +21,7 @@ User:
   date_joined: string
   password: string
 
-Reviews:
+Review:
   user: string
   treatment_quality: integer
   recommendation: string

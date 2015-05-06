@@ -1,33 +1,33 @@
 class DoctorsController < ApplicationController
 
   def index
-  @doctor = Doctors.all
+  @doctor = Doctor.all
   end
 
   def new
-  @doctor = Doctors.new
+  @doctor = Doctor.new
   end
 
   def show 
   end
   	
   def create
-  	Doctors.create(params["doctors"])
+  	Doctor.create(params["doctors"])
    	redirect_to doctors_url
   end
 
   def edit
-  	@doctor = Doctors.find_by(id: params["id"])
+  	@doctor = Doctor.find_by(id: params["id"])
   end
 
   def update
-  	@doctor = Doctors.find_by(id: params["id"])
+  	@doctor = Doctor.find_by(id: params["id"])
   	@doctor.update(params["doctors"])
   	redirect_to doctors_url
   end
 
   def destroy
-  	@doctor = Doctors.find_by(id: params["id"])
+  	@doctor = Doctor.find_by(id: params["id"])
   	@doctor.delete
 	redirect_to doctors_url
   end	
