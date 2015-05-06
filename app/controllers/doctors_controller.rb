@@ -22,7 +22,7 @@ class DoctorsController < ApplicationController
 
   def update
   	@doctor = Doctor.find_by(id: params["id"])
-  	@doctor.update(params["doctors"])
+  	@doctor.update(params["doctor"])
   	redirect_to doctors_url
   end
 

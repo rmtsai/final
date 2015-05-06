@@ -4,7 +4,7 @@ Hospital.delete_all
 Doctor.delete_all
 TypeofDoctor.delete_all
 User.delete_all
-Reviews.delete_all
+Review.delete_all
 
 # Create the hospital names
 puts "Creating hospital names..."
