@@ -23,6 +23,16 @@
       <%= form.label :specialty %>
       <%= form.text_field :specialty, class: "form-control" %>
     </p>
+
+    <p>
+      <%= form.label :typeofdoctor_id %>
+      <%= form.text_field :typeofdoctor_id, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :hospital_id %>
+      <%= form.collection_select :hospital_id, Hospital.all, :id, :name %>
+    </p>
   </div>
   
   <p><%= form.button 'Create Doctor', class: "btn btn-success" %></p>

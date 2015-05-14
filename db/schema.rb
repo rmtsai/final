@@ -13,13 +13,26 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "doctors", force: true do |t|
-    t.string "name"
-    t.string "dob"
-    t.string "education"
-    t.string "years_of_experience"
-    t.string "specialty"
+  create_table "affiliations", force: true do |t|
+    t.integer "hospital_id"
+    t.integer "doctor_id"
   end
+
+  add_index "affiliations", ["doctor_id"], name: "index_affiliations_on_doctor_id"
+  add_index "affiliations", ["hospital_id"], name: "index_affiliations_on_hospital_id"
+
+  create_table "doctors", force: true do |t|
+    t.string  "name"
+    t.string  "dob"
+    t.string  "education"
+    t.string  "years_of_experience"
+    t.string  "specialty"
+    t.integer "typeofdoctor_id"
+    t.integer "hospital_id"
+  end
+
+  add_index "doctors", ["hospital_id"], name: "index_doctors_on_hospital_id"
+  add_index "doctors", ["typeofdoctor_id"], name: "index_doctors_on_typeofdoctor_id"
 
   create_table "hospitals", force: true do |t|
     t.string  "name"
@@ -36,8 +49,7 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "typeof_doctors", force: true do |t|
-    t.string  "specialty"
-    t.integer "doctor"
+    t.string "specialty"
   end
 
   create_table "users", force: true do |t|

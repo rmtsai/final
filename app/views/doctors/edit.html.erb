@@ -10,6 +10,10 @@
     <%= form.text_field :years_of_experience, class: "form-control" %>
     <%= form.label :specialty %>
     <%= form.text_field :specialty, class: "form-control" %>
+    <%= form.label :typeofdoctor_id %>
+    <%= form.text_field :typeofdoctor_id, class: "form-control" %>
+    <%= form.label :hospital_id %>
+    <%= form.collection_select :hospital_id, Hospital.all, :id, :name %>
   </div>
   <%= form.button 'Update Doctor', class: "btn btn-success" %>
 <% end %>

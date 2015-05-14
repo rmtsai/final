@@ -16,19 +16,19 @@ queens = Hospital.create(name: "Queens Medical Center", private_public_hospital:
 
 # Create the type of doctor
 puts "Creating type of doctor..."
-oncology = TypeofDoctor.create(specialty: "oncology", doctor: "1")
-radiology = TypeofDoctor.create(specialty: "radiology", doctor: "2")
-pediatrics = TypeofDoctor.create(specialty: "pediatrics", doctor: "3")
-primarycare = TypeofDoctor.create(specialty: "primarycare", doctor: "4")
-optometry = TypeofDoctor.create(specialty: "optometry", doctor: "5")
+oncology = TypeofDoctor.create(specialty: "oncology")
+radiology = TypeofDoctor.create(specialty: "radiology")
+pediatrics = TypeofDoctor.create(specialty: "pediatrics")
+primarycare = TypeofDoctor.create(specialty: "primarycare")
+optometry = TypeofDoctor.create(specialty: "optometry")
 
 # Create the doctors
 puts "Creating doctors..."
-rubinstoudemire = Doctor.create(name: "Dr. Rubin Stoudemire", dob: "11-20-1980", education: "USC", years_of_experience: "10", specialty: oncology.id)
-jameshan = Doctor.create(name: "Dr. James Han", dob: "1-08-1956", education: "UCSF", years_of_experience: "30", specialty: radiology.id)
-thomaskirkland = Doctor.create(name: "Dr. Thomas Kirkland", dob: "2-6-1978", education: "Northwestern", years_of_experience: "15", specialty: pediatrics.id)
-lucybell = Doctor.create(name: "Dr. Lucy Bell", dob: "12-20-1970", education: "Florida State", years_of_experience: "20", specialty: primarycare.id)
-lesliejohnson = Doctor.create(name: "Dr. Leslie Johnson", dob: "12-16-1988", education: "Harvard", years_of_experience: "3", specialty: optometry.id)
+rubinstoudemire = Doctor.create(name: "Dr. Rubin Stoudemire", dob: "11-20-1980", education: "USC", years_of_experience: "10", specialty: oncology.id, typeofdoctor_id: oncology.id, hospital_id: northwesternmemorial.id)
+jameshan = Doctor.create(name: "Dr. James Han", dob: "1-08-1956", education: "UCSF", years_of_experience: "30", specialty: radiology.id, typeofdoctor_id: radiology.id, hospital_id: universityofchicago.id)
+thomaskirkland = Doctor.create(name: "Dr. Thomas Kirkland", dob: "2-6-1978", education: "Northwestern", years_of_experience: "15", specialty: pediatrics.id, typeofdoctor_id: pediatrics.id, hospital_id: shriners.id)
+lucybell = Doctor.create(name: "Dr. Lucy Bell", dob: "12-20-1970", education: "Florida State", years_of_experience: "20", specialty: primarycare.id, typeofdoctor_id: pediatrics.id, hospital_id: shriners.id)
+lesliejohnson = Doctor.create(name: "Dr. Leslie Johnson", dob: "12-16-1988", education: "Harvard", years_of_experience: "3", specialty: optometry.id, typeofdoctor_id: optometry.id, hospital_id: jhu.id)
 
 # Create the users
 puts "Creating users..."
@@ -45,3 +45,11 @@ review2 = Review.create(user: jerome.id, treatment_quality: "4", recommendation:
 review3 = Review.create(user: max.id, treatment_quality: "8", recommendation: "yes", review_comments: "patient and kind")
 review4 = Review.create(user: feliz.id, treatment_quality: "9", recommendation: "yes", review_comments: "comforting and smart")
 review5 = Review.create(user: hannah.id, treatment_quality: "8", recommendation: "yes", review_comments: "compassionate individual")
+
+#Create the affiliations
+puts "Creating the affiliations..."
+Affiliation.create(hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+Affiliation.create(hospital_id: universityofchicago.id, doctor_id: jameshan.id)
+Affiliation.create(hospital_id: jhu.id, doctor_id: thomaskirkland.id)
+Affiliation.create(hospital_id: shriners.id, doctor_id: lucybell.id)
+Affiliation.create(hospital_id: northwesternmemorial.id, doctor_id: lesliejohnson.id)

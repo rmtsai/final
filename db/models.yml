@@ -11,6 +11,7 @@ Doctor:
   years_of_experience: string
   specialty: string
   typeofdoctor_id: integer
+  hospital_id: integer
 
 TypeofDoctor:
   specialty: string
