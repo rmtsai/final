@@ -1,0 +1,45 @@
+<%= form_for @patient do |form| %>
+  <div class="form-group">
+    <p>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+    </p>
+    <p>
+      <%= form.label :dob %>
+      <%= form.text_field :dob, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :diagnosis %>
+      <%= form.text_field :diagnosis, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :symptoms %>
+      <%= form.text_field :symptoms, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :level_of_pain %>
+      <%= form.text_field :level_of_pain, class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :notes %>
+      <%= form.text_field :notes  , class: "form-control" %>
+    </p>
+
+    <p>
+      <%= form.label :hospital_id %>
+      <%= form.collection_select :hospital_id, Hospital.all, :id, :name %>
+    </p>
+
+     <p>
+      <%= form.label :doctor_id %>
+      <%= form.collection_select :doctor_id, Doctor.all, :id, :name %>
+    </p>
+  </div>
+  
+  <p><%= form.button 'Create Patient', class: "btn btn-success" %></p>
+<% end %>
+

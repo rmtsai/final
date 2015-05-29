@@ -35,11 +35,24 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "doctors", ["typeofdoctor_id"], name: "index_doctors_on_typeofdoctor_id"
 
   create_table "hospitals", force: true do |t|
-    t.string  "name"
-    t.string  "private_public_hospital"
-    t.string  "year_founded"
-    t.integer "doctors"
+    t.string "name"
+    t.string "private_public_hospital"
+    t.string "year_founded"
   end
+
+  create_table "patients", force: true do |t|
+    t.string  "name"
+    t.string  "dob"
+    t.string  "diagnosis"
+    t.string  "symptoms"
+    t.string  "level_of_pain"
+    t.string  "notes"
+    t.integer "hospital_id"
+    t.integer "doctor_id"
+  end
+
+  add_index "patients", ["doctor_id"], name: "index_patients_on_doctor_id"
+  add_index "patients", ["hospital_id"], name: "index_patients_on_hospital_id"
 
   create_table "reviews", force: true do |t|
     t.string  "user"

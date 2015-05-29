@@ -1,0 +1,13 @@
+<% patient = Patient.find_by(id: params["id"])%>
+
+
+	<h1> <%=patient.name%></h1>
+
+	<p>	<%=patient.dob%></p>
+	<p>	<%=patient.diagnosis%></p>
+	<p>	<%=patient.symptoms%></p>
+	<p>	<%=patient.level_of_pain%></p>
+	<p>	<%=patient.notes%></p>
+	<p>	<%=patient.hospital_id%></p>
+	<p>	<%=patient.doctor_id%></p>
+

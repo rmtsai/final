@@ -5,14 +5,16 @@ Doctor.delete_all
 TypeofDoctor.delete_all
 User.delete_all
 Review.delete_all
+Affiliation.delete_all
+Patient.delete_all
 
 # Create the hospital names
 puts "Creating hospital names..."
-northwesternmemorial = Hospital.create(name: "Northwestern Memorial", private_public_hospital: "private", year_founded: "1907", doctors: "1")
-universityofchicago = Hospital.create(name: "University of Chicago", private_public_hospital: "private", year_founded: "1926", doctors: "2")
-shriners = Hospital.create(name: "Shriners", private_public_hospital: "private", year_founded: "1955", doctors: "3")
-jhu = Hospital.create(name: "Johns Hopkins University", private_public_hospital: "private", year_founded: "2006", doctors: "4")
-queens = Hospital.create(name: "Queens Medical Center", private_public_hospital: "private", year_founded: "1975", doctors: "5")
+northwesternmemorial = Hospital.create(name: "Northwestern Memorial", private_public_hospital: "private", year_founded: "1907")
+universityofchicago = Hospital.create(name: "University of Chicago", private_public_hospital: "private", year_founded: "1926")
+shriners = Hospital.create(name: "Shriners", private_public_hospital: "private", year_founded: "1955")
+jhu = Hospital.create(name: "Johns Hopkins University", private_public_hospital: "private", year_founded: "2006")
+queens = Hospital.create(name: "Queens Medical Center", private_public_hospital: "private", year_founded: "1975")
 
 # Create the type of doctor
 puts "Creating type of doctor..."
@@ -53,3 +55,12 @@ Affiliation.create(hospital_id: universityofchicago.id, doctor_id: jameshan.id)
 Affiliation.create(hospital_id: jhu.id, doctor_id: thomaskirkland.id)
 Affiliation.create(hospital_id: shriners.id, doctor_id: lucybell.id)
 Affiliation.create(hospital_id: northwesternmemorial.id, doctor_id: lesliejohnson.id)
+
+#Create the patients
+puts "Creating the patients..."
+Patient.create(name: "James Lin", dob: "11-08-1978", diagnosis: "arthritis", symptoms: "sore joints", level_of_pain: "8/10", notes: "constant pain", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+Patient.create(name: "Jane Doe", dob: "1-07-1928", diagnosis: "cold", symptoms: "cough", level_of_pain: "5/10", notes: "dry mouth", hospital_id: jhu.id, doctor_id: thomaskirkland.id)
+Patient.create(name: "John Macintosh", dob: "11-29-1987", diagnosis: "flu", symptoms: "nausea", level_of_pain: "6/10", notes: "constant sore stomach", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+Patient.create(name: "Larry Jones", dob: "12-2-1998", diagnosis: "pneumonia", symptoms: "fever", level_of_pain: "4/10", notes: "long fever", hospital_id: universityofchicago.id, doctor_id: jameshan.id)
+Patient.create(name: "Mustafa Syon", dob: "4-08-1984", diagnosis: "heart attack", symptoms: "sore heart", level_of_pain: "10/10", notes: "left side of body in pain", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+

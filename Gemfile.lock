@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ImageResize (0.0.5)
     actionmailer (4.1.8)
       actionpack (= 4.1.8)
       actionview (= 4.1.8)
@@ -112,6 +113,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  ImageResize (~> 0.0.5)
   coffee-rails (~> 4.0.0)
   ez
   jbuilder (~> 2.0)

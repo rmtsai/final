@@ -1,0 +1,12 @@
+<h3>Welcome to the Patient Registry</h3>
+
+<% @patients.each do |patient|%>
+	<p>
+<%= link_to patient.name, patient_url(patient)%>
+<%= link_to "Edit", edit_patient_url(patient)%> 
+<%= link_to "Delete", patient_url(patient), method: :delete%>
+	</p>
+
+<% end %>
+
+<%= link_to "New Patient", new_patient_path, class: 'btn btn-sm btn-success' %>

@@ -2,8 +2,7 @@ Hospital:
   name: string
   private_public_hospital: string
   year_founded: string
-  doctors: integer
-
+  
 Doctor:
   name: string
   dob: string
@@ -29,5 +28,15 @@ Review:
   review_comments: text
 
 Affiliation:
+  hospital_id: integer
+  doctor_id: integer
+
+Patient:
+  name: string
+  dob: string
+  diagnosis: string
+  symptoms: string
+  level_of_pain: string
+  notes: string
   hospital_id: integer
   doctor_id: integer

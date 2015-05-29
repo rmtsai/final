@@ -1,4 +1,5 @@
 class DoctorsController < ApplicationController
+skip_before_action :auth, only: [:new, :create]
 
   def index
   @doctors = Doctor.all
