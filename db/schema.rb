@@ -29,10 +29,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "specialty"
     t.integer "typeofdoctor_id"
     t.integer "hospital_id"
+    t.integer "user_id"
   end
 
   add_index "doctors", ["hospital_id"], name: "index_doctors_on_hospital_id"
   add_index "doctors", ["typeofdoctor_id"], name: "index_doctors_on_typeofdoctor_id"
+  add_index "doctors", ["user_id"], name: "index_doctors_on_user_id"
 
   create_table "hospitals", force: true do |t|
     t.string "name"
@@ -49,10 +51,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "notes"
     t.integer "hospital_id"
     t.integer "doctor_id"
+    t.integer "user_id"
   end
 
   add_index "patients", ["doctor_id"], name: "index_patients_on_doctor_id"
   add_index "patients", ["hospital_id"], name: "index_patients_on_hospital_id"
+  add_index "patients", ["user_id"], name: "index_patients_on_user_id"
 
   create_table "reviews", force: true do |t|
     t.string  "user"
@@ -66,10 +70,15 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
-    t.string "date_joined"
-    t.string "password"
+    t.string  "name"
+    t.string  "email"
+    t.string  "date_joined"
+    t.string  "password"
+    t.integer "patient_id"
+    t.integer "doctor_id"
   end
+
+  add_index "users", ["doctor_id"], name: "index_users_on_doctor_id"
+  add_index "users", ["patient_id"], name: "index_users_on_patient_id"
 
 end

@@ -2,7 +2,7 @@ Hospital:
   name: string
   private_public_hospital: string
   year_founded: string
-  
+
 Doctor:
   name: string
   dob: string
@@ -11,6 +11,7 @@ Doctor:
   specialty: string
   typeofdoctor_id: integer
   hospital_id: integer
+  user_id: integer
 
 TypeofDoctor:
   specialty: string
@@ -20,6 +21,8 @@ User:
   email: string
   date_joined: string
   password: string
+  patient_id: integer
+  doctor_id: integer
 
 Review:
   user: string
@@ -40,3 +43,5 @@ Patient:
   notes: string
   hospital_id: integer
   doctor_id: integer
+  user_id: integer
+

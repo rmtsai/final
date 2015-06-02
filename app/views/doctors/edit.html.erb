@@ -11,7 +11,7 @@
     <%= form.label :specialty %>
     <%= form.text_field :specialty, class: "form-control" %>
     <%= form.label :typeofdoctor_id %>
-    <%= form.collection_select :typeofdoctor_id, TypeofDoctor.all, :id, :name %>
+    <%= form.collection_select :typeofdoctor_id, class: "form-control" %>
     <%= form.label :hospital_id %>
     <%= form.collection_select :hospital_id, Hospital.all, :id, :name %>
   </div>

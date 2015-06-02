@@ -1,0 +1,21 @@
+<%= form_for @doctor do |form| %>
+  <div class="form-group">
+    <p>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <%= text_field_tag :email, "", class: "form-control" %>
+    </p>
+
+    <p>
+      <label for="password">Password</label>
+      <%= text_field_tag :password, "", class: "form-control" %>
+    </p>
+
+  </div>
+  
+  <p><%= form.button 'Create Doctor', class: "btn btn-success" %></p>
+<% end %>
+
