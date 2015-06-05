@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 	resources :doctors
 	resources :home
 	resources :sessions
-	resources :messags
+	resources :messages
 	resources :patients
 end

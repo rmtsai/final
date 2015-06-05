@@ -1,3 +1,5 @@
+class MessagesController < ApplicationController
+
 def index
   @message = Message.all
   end
@@ -11,8 +13,15 @@ def index
   end
     
   def create
-    Message.create(params["messages"])
-    redirect_to messages_url
+  @message = Message.new(params["messages"])
+  @Doctor = Doctor.find_by(user_id: current_user.id)
+    
+    if @message.save!
+        redirect_to doctor_url(@Doctor)
+
+    else
+      render "new"
+    end
   end
 
   def destroy
@@ -20,5 +29,5 @@ def index
     @message.delete
   redirect_to message_url
   end 
-
 end
+

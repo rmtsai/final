@@ -50,8 +50,3 @@ Message:
   patient_id: integer
   reply_id: integer
 
-Reply:
-  body: text
-  doctor_id: integer
-  patient_id: integer
-  message_id: string

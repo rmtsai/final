@@ -60,9 +60,12 @@ Affiliation.create(hospital_id: northwesternmemorial.id, doctor_id: lesliejohnso
 
 #Create the patients
 puts "Creating the patients..."
-Patient.create(name: "James Lin", dob: "11-08-1978", diagnosis: "arthritis", symptoms: "sore joints", level_of_pain: "8/10", notes: "constant pain", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
-Patient.create(name: "Jane Doe", dob: "1-07-1928", diagnosis: "cold", symptoms: "cough", level_of_pain: "5/10", notes: "dry mouth", hospital_id: jhu.id, doctor_id: thomaskirkland.id)
-Patient.create(name: "John Macintosh", dob: "11-29-1987", diagnosis: "flu", symptoms: "nausea", level_of_pain: "6/10", notes: "constant sore stomach", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
-Patient.create(name: "Larry Jones", dob: "12-2-1998", diagnosis: "pneumonia", symptoms: "fever", level_of_pain: "4/10", notes: "long fever", hospital_id: universityofchicago.id, doctor_id: jameshan.id)
-Patient.create(name: "Mustafa Syon", dob: "4-08-1984", diagnosis: "heart attack", symptoms: "sore heart", level_of_pain: "10/10", notes: "left side of body in pain", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+jameslin = Patient.create(name: "James Lin", dob: "11-08-1978", diagnosis: "arthritis", symptoms: "sore joints", level_of_pain: "8/10", notes: "constant pain", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+janedoe = Patient.create(name: "Jane Doe", dob: "1-07-1928", diagnosis: "cold", symptoms: "cough", level_of_pain: "5/10", notes: "dry mouth", hospital_id: jhu.id, doctor_id: thomaskirkland.id)
+johnmacintosh = Patient.create(name: "John Macintosh", dob: "11-29-1987", diagnosis: "flu", symptoms: "nausea", level_of_pain: "6/10", notes: "constant sore stomach", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
+larryjones = Patient.create(name: "Larry Jones", dob: "12-2-1998", diagnosis: "pneumonia", symptoms: "fever", level_of_pain: "4/10", notes: "long fever", hospital_id: universityofchicago.id, doctor_id: jameshan.id)
+mustafasyon = Patient.create(name: "Mustafa Syon", dob: "4-08-1984", diagnosis: "heart attack", symptoms: "sore heart", level_of_pain: "10/10", notes: "left side of body in pain", hospital_id: northwesternmemorial.id, doctor_id: rubinstoudemire.id)
 
+#Create the patients
+puts "Creating the messages..."
+Message.create(body: "test", doctor_id: rubinstoudemire.id, patient_id: jameslin.id)

@@ -7,6 +7,7 @@ skip_before_action :auth, only: [:new, :create]
 
   def show 
   @doctor = Doctor.find_by(id: params["id"])  
+  @message = Message.new
   end
 
   def new
@@ -30,7 +31,7 @@ skip_before_action :auth, only: [:new, :create]
     @Doctor.user_id = @User.id
     @Doctor.save!
   	
-   	redirect_to doctors_url
+   	redirect_to doctor_url(@Doctor)
   end
 
   def edit

@@ -6,7 +6,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params["email"])
     if user && user.authenticate(params["password"])
       session["user_id"] = user.id
-      redirect_to "/doctors"
+
+    @Doctor = Doctor.find_by(user_id: user.id)
+      redirect_to doctor_url(@Doctor)
+ 
     else
       redirect_to new_session_path, alert: "Bad username or password"
     end

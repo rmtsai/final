@@ -1,10 +1,10 @@
-<% doctor = Doctor.find_by(id: params["id"])%>
+<%= form_for @message do |form| %>
+  <div class="form-group">
+    <p>
+      <%= form.label :body, "Message" %>
+      <%= form.text_area :body, class: "form-control" %>
+    </p>
 
-	<h1> <%=doctor.name%></h1>
-
-	<p>	<%=doctor.dob%></p>
-	<p>	<%=doctor.education%></p>
-	<p>	<%=doctor.years_of_experience%></p>
-	<p>	<%=doctor.specialty%></p>
-	<p>	<%=doctor.typeofdoctor_id%></p>
-	<p>	<%=doctor.hospital.name%></p>
+<p><%= form.button 'Submit Message', class: "btn btn-success" %></p>
+<% end %>
+  

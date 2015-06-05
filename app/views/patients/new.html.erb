@@ -38,6 +38,16 @@
       <%= form.label :doctor_id %>
       <%= form.collection_select :doctor_id, Doctor.all, :id, :name %>
     </p>
+
+      <p>
+      <label for="email">Email</label>
+      <%= text_field_tag :email, "", class: "form-control" %>
+    </p>
+
+    <p>
+      <label for="password">Password</label>
+      <%= text_field_tag :password, "", class: "form-control" %>
+    </p>
   </div>
   
   <p><%= form.button 'Create Patient', class: "btn btn-success" %></p>
