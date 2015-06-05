@@ -45,12 +45,13 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "messages", force: true do |t|
     t.integer "doctor_id"
     t.integer "patient_id"
-    t.integer "reply_id"
+    t.text    "body"
+    t.integer "user_id"
   end
 
   add_index "messages", ["doctor_id"], name: "index_messages_on_doctor_id"
   add_index "messages", ["patient_id"], name: "index_messages_on_patient_id"
-  add_index "messages", ["reply_id"], name: "index_messages_on_reply_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "patients", force: true do |t|
     t.string  "name"
@@ -67,17 +68,6 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "patients", ["doctor_id"], name: "index_patients_on_doctor_id"
   add_index "patients", ["hospital_id"], name: "index_patients_on_hospital_id"
   add_index "patients", ["user_id"], name: "index_patients_on_user_id"
-
-  create_table "replies", force: true do |t|
-    t.text    "body"
-    t.integer "doctor_id"
-    t.integer "patient_id"
-    t.string  "message_id"
-  end
-
-  add_index "replies", ["doctor_id"], name: "index_replies_on_doctor_id"
-  add_index "replies", ["message_id"], name: "index_replies_on_message_id"
-  add_index "replies", ["patient_id"], name: "index_replies_on_patient_id"
 
   create_table "reviews", force: true do |t|
     t.string  "user"

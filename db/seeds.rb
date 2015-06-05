@@ -69,3 +69,7 @@ mustafasyon = Patient.create(name: "Mustafa Syon", dob: "4-08-1984", diagnosis: 
 #Create the patients
 puts "Creating the messages..."
 Message.create(body: "test", doctor_id: rubinstoudemire.id, patient_id: jameslin.id)
+Message.create(body: "test", doctor_id: jameshan.id, patient_id: janedoe.id)
+Message.create(body: "test", doctor_id: thomaskirkland.id, patient_id: johnmacintosh.id)
+Message.create(body: "test", doctor_id: lucybell.id, patient_id: larryjones.id)
+Message.create(body: "test", doctor_id: lesliejohnson.id, patient_id: mustafasyon.id)

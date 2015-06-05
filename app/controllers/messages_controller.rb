@@ -5,7 +5,12 @@ def index
   end
 
   def show 
-  @message = Message.find_by(id: params["id"])  
+  @message = Message.find_by(id: params["message"])  
+  @Doctor = Doctor.find_by(user_id: current_user.id)
+    
+    @message.doctor = @Doctor
+    @message.user = current_user
+
   end
 
   def new
@@ -13,8 +18,11 @@ def index
   end
     
   def create
-  @message = Message.new(params["messages"])
+  @message = Message.new(params["message"])
   @Doctor = Doctor.find_by(user_id: current_user.id)
+
+    @message.doctor = @Doctor
+    @message.user = current_user
     
     if @message.save!
         redirect_to doctor_url(@Doctor)

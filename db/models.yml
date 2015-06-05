@@ -48,5 +48,6 @@ Message:
   body: text
   doctor_id: integer
   patient_id: integer
-  reply_id: integer
+  user_id: integer
+  
 
