@@ -1,0 +1,10 @@
+<%= form_for @message do |form| %>
+  <div class="form-group">
+    <%= form.label :message %>
+    <%= form.text_field :message, class: "form-control" %>
+
+  </div>
+  
+  <p><%= form.button 'New Message', class: "btn btn-success" %></p>
+<% end %>
+

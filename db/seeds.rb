@@ -1,12 +1,14 @@
 # Deletes everything from the database so that you start fresh
 puts "Deleting all records from the database..."
 Hospital.delete_all
-Doctor.delete_all
 TypeofDoctor.delete_all
 User.delete_all
+Doctor.delete_all
 Review.delete_all
 Affiliation.delete_all
 Patient.delete_all
+Message.delete_all
+Reply.delete_all
 
 # Create the hospital names
 puts "Creating hospital names..."
@@ -24,29 +26,29 @@ pediatrics = TypeofDoctor.create(specialty: "pediatrics")
 primarycare = TypeofDoctor.create(specialty: "primarycare")
 optometry = TypeofDoctor.create(specialty: "optometry")
 
-# Create the doctors
-puts "Creating doctors..."
-rubinstoudemire = Doctor.create(name: "Dr. Rubin Stoudemire", dob: "11-20-1980", education: "USC", years_of_experience: "10", specialty: oncology.id, typeofdoctor_id: oncology.id, hospital_id: northwesternmemorial.id)
-jameshan = Doctor.create(name: "Dr. James Han", dob: "1-08-1956", education: "UCSF", years_of_experience: "30", specialty: radiology.id, typeofdoctor_id: radiology.id, hospital_id: universityofchicago.id)
-thomaskirkland = Doctor.create(name: "Dr. Thomas Kirkland", dob: "2-6-1978", education: "Northwestern", years_of_experience: "15", specialty: pediatrics.id, typeofdoctor_id: pediatrics.id, hospital_id: shriners.id)
-lucybell = Doctor.create(name: "Dr. Lucy Bell", dob: "12-20-1970", education: "Florida State", years_of_experience: "20", specialty: primarycare.id, typeofdoctor_id: pediatrics.id, hospital_id: shriners.id)
-lesliejohnson = Doctor.create(name: "Dr. Leslie Johnson", dob: "12-16-1988", education: "Harvard", years_of_experience: "3", specialty: optometry.id, typeofdoctor_id: optometry.id, hospital_id: jhu.id)
-
 # Create the users
 puts "Creating users..."
-jamie = User.create(name: "Jamie Kor", email: "jkor@gmail.com", date_joined: "2-3-2010", password: "familyties")
-jerome = User.create(name: "Jerome Miller", email: "jerome.miller@yahoo.com", date_joined: "1-6-2008", password: "87298*")
-max = User.create(name: "Max Power", email: "max1989@gmail.com", date_joined: "5-7-2014", password: "krytonite129")
-feliz = User.create(name: "Feliz Noreiga", email: "feliz.noreiga@gmail.com", date_joined: "7-12-2012", password: "09*7292")
-hannah = User.create(name: "Hannah Jones", email: "hjones@hotmail.com", date_joined: "7-5-2009", password: "mrjonesdines")
+rubinstoudemire = User.create(name: "Rubin Stoudemire", email: "jkor@gmail.com", date_joined: "2-3-2010", password: "testing")
+jameshan = User.create(name: "James Han", email: "jerome.miller@yahoo.com", date_joined: "1-6-2008", password: "testing")
+thomaskirkland = User.create(name: "Thomas Kirkland", email: "max1989@gmail.com", date_joined: "5-7-2014", password: "testing")
+lucybell = User.create(name: "Lucy Bell", email: "feliz.noreiga@gmail.com", date_joined: "7-12-2012", password: "testing")
+lesliejohnson = User.create(name: "Leslie Johnson", email: "hjones@hotmail.com", date_joined: "7-5-2009", password: "testing")
+
+# Create the doctors
+puts "Creating doctors..."
+rubinstoudemire = Doctor.create(name: "Dr. Rubin Stoudemire", dob: "11-20-1980", education: "USC", years_of_experience: "10", specialty: oncology.id, typeofdoctor_id: oncology.id, hospital_id: northwesternmemorial.id, user_id: rubinstoudemire.id)
+jameshan = Doctor.create(name: "Dr. James Han", dob: "1-08-1956", education: "UCSF", years_of_experience: "30", specialty: radiology.id, typeofdoctor_id: radiology.id, hospital_id: universityofchicago.id, user_id: jameshan.id)
+thomaskirkland = Doctor.create(name: "Dr. Thomas Kirkland", dob: "2-6-1978", education: "Northwestern", years_of_experience: "15", specialty: pediatrics.id, typeofdoctor_id: pediatrics.id, hospital_id: shriners.id, user_id: thomaskirkland.id)
+lucybell = Doctor.create(name: "Dr. Lucy Bell", dob: "12-20-1970", education: "Florida State", years_of_experience: "20", specialty: primarycare.id, typeofdoctor_id: pediatrics.id, hospital_id: shriners.id, user_id: lucybell.id)
+lesliejohnson = Doctor.create(name: "Dr. Leslie Johnson", dob: "12-16-1988", education: "Harvard", years_of_experience: "3", specialty: optometry.id, typeofdoctor_id: optometry.id, hospital_id: jhu.id, user_id: lesliejohnson.id)
 
 # Create the reviews
 puts "Creating the reviews..."
-review1 = Review.create(user: jamie.id, treatment_quality: "10", recommendation: "yes", review_comments: "awesome bedside manner")
-review2 = Review.create(user: jerome.id, treatment_quality: "4", recommendation: "no", review_comments: "too direct and mean")
-review3 = Review.create(user: max.id, treatment_quality: "8", recommendation: "yes", review_comments: "patient and kind")
-review4 = Review.create(user: feliz.id, treatment_quality: "9", recommendation: "yes", review_comments: "comforting and smart")
-review5 = Review.create(user: hannah.id, treatment_quality: "8", recommendation: "yes", review_comments: "compassionate individual")
+review1 = Review.create(user: rubinstoudemire.id, treatment_quality: "10", recommendation: "yes", review_comments: "awesome bedside manner")
+review2 = Review.create(user: jameshan.id, treatment_quality: "4", recommendation: "no", review_comments: "too direct and mean")
+review3 = Review.create(user: thomaskirkland.id, treatment_quality: "8", recommendation: "yes", review_comments: "patient and kind")
+review4 = Review.create(user: lucybell.id, treatment_quality: "9", recommendation: "yes", review_comments: "comforting and smart")
+review5 = Review.create(user: lesliejohnson.id, treatment_quality: "8", recommendation: "yes", review_comments: "compassionate individual")
 
 #Create the affiliations
 puts "Creating the affiliations..."

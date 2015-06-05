@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "year_founded"
   end
 
+  create_table "messages", force: true do |t|
+    t.integer "doctor_id"
+    t.integer "patient_id"
+    t.integer "reply_id"
+  end
+
+  add_index "messages", ["doctor_id"], name: "index_messages_on_doctor_id"
+  add_index "messages", ["patient_id"], name: "index_messages_on_patient_id"
+  add_index "messages", ["reply_id"], name: "index_messages_on_reply_id"
+
   create_table "patients", force: true do |t|
     t.string  "name"
     t.string  "dob"
@@ -58,6 +68,17 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "patients", ["hospital_id"], name: "index_patients_on_hospital_id"
   add_index "patients", ["user_id"], name: "index_patients_on_user_id"
 
+  create_table "replies", force: true do |t|
+    t.text    "body"
+    t.integer "doctor_id"
+    t.integer "patient_id"
+    t.string  "message_id"
+  end
+
+  add_index "replies", ["doctor_id"], name: "index_replies_on_doctor_id"
+  add_index "replies", ["message_id"], name: "index_replies_on_message_id"
+  add_index "replies", ["patient_id"], name: "index_replies_on_patient_id"
+
   create_table "reviews", force: true do |t|
     t.string  "user"
     t.integer "treatment_quality"
@@ -70,15 +91,11 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "users", force: true do |t|
-    t.string  "name"
-    t.string  "email"
-    t.string  "date_joined"
-    t.string  "password"
-    t.integer "patient_id"
-    t.integer "doctor_id"
+    t.string "name"
+    t.string "email"
+    t.string "date_joined"
+    t.string "password"
+    t.string "password_digest"
   end
-
-  add_index "users", ["doctor_id"], name: "index_users_on_doctor_id"
-  add_index "users", ["patient_id"], name: "index_users_on_patient_id"
 
 end

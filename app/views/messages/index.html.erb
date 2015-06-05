@@ -1,0 +1,12 @@
+<h3>Here are your messages!</h3>
+
+<% @messages.each do |message|%>
+	<p>
+<%= link_to doctor.name, doctor_url(doctor)%>
+<%= link_to "Edit", edit_doctor_url(doctor)%> 
+<%= link_to "Delete", doctor_url(doctor), method: :delete%>
+	</p>
+
+<% end %>
+
+<%= link_to "New Doctor", new_user_path, class: 'btn btn-sm btn-success' %>

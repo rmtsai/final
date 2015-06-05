@@ -21,8 +21,7 @@ User:
   email: string
   date_joined: string
   password: string
-  patient_id: integer
-  doctor_id: integer
+  password_digest: string
 
 Review:
   user: string
@@ -45,3 +44,14 @@ Patient:
   doctor_id: integer
   user_id: integer
 
+Message:
+  body: text
+  doctor_id: integer
+  patient_id: integer
+  reply_id: integer
+
+Reply:
+  body: text
+  doctor_id: integer
+  patient_id: integer
+  message_id: string
