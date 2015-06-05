@@ -11,6 +11,12 @@ def index
     @message.doctor = @Doctor
     @message.user = current_user
 
+  @message = Message.find_by(id: params["message"]) 
+  @Patient = Patient.find_by(user_id: current_user.id)
+    
+    @message.patient = @Patient
+    @message.user = current_user
+
   end
 
   def new
@@ -30,6 +36,7 @@ def index
     else
       render "new"
     end
+    
   end
 
   def destroy

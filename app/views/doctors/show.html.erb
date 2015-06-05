@@ -11,9 +11,13 @@
 <div class="row">
   <div class="col-md-7 col-md-offset-3">
     <h3>Current Messages</h3>
-    <% @Doctor.messages.each do |message| %>
+    <% @messages.each do |message| %>
+    	<% if message.doctor_id == @doctor.id %>
+    	<p><%= message.body %></p>
+    <% end %>
+    <% end %>
       <h4>
-        <%= message.Doctor.name %> 
-       <% end %>
+         
+     
        
     

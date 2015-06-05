@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+skip_before_action :auth, only: [:new, :create]
 
   def index
   @patients = Patient.all
@@ -6,6 +7,9 @@ class PatientsController < ApplicationController
 
   def show 
   @patient = Patient.find_by(id: params["id"])  
+  @message = Message.new
+  @messages = Message.all
+
   end
 
   def new

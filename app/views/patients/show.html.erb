@@ -1,13 +1,20 @@
-<% patient = Patient.find_by(id: params["id"])%>
+<%= form_for @message do |form| %>
+  <div class="form-group">
+    <p>
+      <%= form.label :body, "Message" %>
+      <%= form.text_area :body, class: "form-control" %>
+    </p>
 
-
-	<h1> <%=patient.name%></h1>
-
-	<p>	<%=patient.dob%></p>
-	<p>	<%=patient.diagnosis%></p>
-	<p>	<%=patient.symptoms%></p>
-	<p>	<%=patient.level_of_pain%></p>
-	<p>	<%=patient.notes%></p>
-	<p>	<%=patient.hospital_id%></p>
-	<p>	<%=patient.doctor_id%></p>
-
+<p><%= form.button 'Submit Message', class: "btn btn-success" %></p>
+<% end %>
+  
+<div class="row">
+  <div class="col-md-7 col-md-offset-3">
+    <h3>Current Messages</h3>
+    <% @messages.each do |message| %>
+    	<% if message.patient_id == @patient.id %>
+    	<p><%= message.body %></p>
+    <% end %>
+    <% end %>
+      <h4>
+         
