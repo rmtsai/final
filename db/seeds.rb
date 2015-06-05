@@ -8,7 +8,6 @@ Review.delete_all
 Affiliation.delete_all
 Patient.delete_all
 Message.delete_all
-Reply.delete_all
 
 # Create the hospital names
 puts "Creating hospital names..."
